@@ -6,6 +6,8 @@ public class MaquinaExpendedoraSimple {
     private int balanceClienteActual;
     // El total de dinero almacenado en la maquina desde su ultimo vaciado
     private int totalDineroAcumulado;
+    // El total acumulado de la máquina
+    private int totalDineroMaquina;
     // El origen del billete
     private String estacionOrigen;
     // El destino del billete
@@ -13,25 +15,27 @@ public class MaquinaExpendedoraSimple {
 
     /**
      * Crea una maquina expendedora de billetes de tren con el 
-     * precio del billete y el origen y destino dados. Se asume que el precio
-     * del billete que se recibe es mayor que 0.
+     * precio del billete y el origen es León y destino Madrid. El precio
+     * del billete que se recibe es 12.
      */
     public MaquinaExpendedoraSimple() {
         precioBillete = 12;
         balanceClienteActual = 0;
         totalDineroAcumulado = 0;
+        totalDineroMaquina = 0;
         estacionOrigen = "León";
         estacionDestino = "Madrid";
     }
 
         /**
      * Crea una maquina expendedora de billetes de tren con el 
-     * precio del billete y el origen y destino dados. Se asume que el precio
+     * precio del billete y el origen es León y destino dado. Se asume que el precio
      * del billete que se recibe es mayor que 0.
      */
     public MaquinaExpendedoraSimple(int precioDelBillete, String destino) {
         precioBillete = precioDelBillete;
         balanceClienteActual = 0;
+        totalDineroMaquina = 0;
         totalDineroAcumulado = 0;
         estacionOrigen = "León";
         estacionDestino = destino;
@@ -51,11 +55,19 @@ public class MaquinaExpendedoraSimple {
         return balanceClienteActual;
     }
 
+        /**
+     * Devuelve la cantidad de dinero total de la máquina
+     */
+    public int getTotalDineroMaquina() {
+        return totalDineroMaquina;
+    }
+    
     /**
      * Simula la introduccion de dinero por parte del cliente actual
      */
     public void introducirDinero(int cantidadIntroducida) {
         balanceClienteActual = balanceClienteActual + cantidadIntroducida;
+        totalDineroMaquina = totalDineroMaquina + cantidadIntroducida;
     }
 
     /**
