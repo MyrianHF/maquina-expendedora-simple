@@ -63,14 +63,13 @@ public class MaquinaExpendedoraSimple {
      */
     public void introducirDinero(int cantidadIntroducida) {
         balanceClienteActual = balanceClienteActual + cantidadIntroducida;
-        totalDineroAcumulado = totalDineroAcumulado + cantidadIntroducida;
     }
 
     /**
      * Establecer precio billete
      */
-    public void setPrecioBillete(int precioBillete) {
-      this.precioBillete = precioBillete;
+    public void setPrecioBillete(int precioDelBillete) {
+        precioBillete = precioDelBillete;
     }    
     
     /**
