@@ -79,6 +79,13 @@ public class MaquinaExpendedoraSimple {
         precioBillete = precioBillete - precioDelBillete;
     }  
     
+        /**
+     * Vaciar dinero máquina
+     */
+    public void vaciarTotalDineroAcumulado() {
+        totalDineroAcumulado = 0;
+    }  
+    
     /**
      * Imprime un billete para el cliente actual
      */
